@@ -14,8 +14,8 @@ export default class livroController {
 
     cadastrar (req,res) {
         try {
-            let {nomeLivro, idCategoria, nomeCategoria} = req.body;
-            let entity = new livroEntity(new Date().getTime(), nomeLivro, idCategoria, nomeCategoria)
+            let {nomeLivro, idCategoria, categoriaLivro} = req.body;
+            let entity = new livroEntity(new Date().getTime(), nomeLivro, idCategoria, categoriaLivro)
 
             let repo = new livroRepository();
             repo.cadastrar(entity)

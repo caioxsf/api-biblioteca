@@ -7,5 +7,4 @@ const ctrl = new livroController();
 router.get("/", ctrl.listar);
 router.post("/cadastrar", ctrl.cadastrar);
 
-
 export default router;

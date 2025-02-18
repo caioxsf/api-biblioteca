@@ -4,8 +4,8 @@ let listaLivro = [
     {
         "idLivro": 2,
         "nomeLivro": "Teste",
-        "idCategoria": "Teste",
-        "nomeCategoria": "Teste"
+        "idCategoria": 1,
+        "categoriaLivro": "Teste"
     }
 ]
 
@@ -19,7 +19,7 @@ export default class livroRepository {
                     listaLivro[i].idLivro,
                     listaLivro[i].nomeLivro,
                     listaLivro[i].idCategoria,
-                    listaLivro[i].nomeCategoria
+                    listaLivro[i].categoriaLivro
                 )
             )
         }
@@ -28,9 +28,10 @@ export default class livroRepository {
 
     cadastrar (entity) {
         listaLivro.push({
+            idLivro: entity.idLivro,
             nomeLivro: entity.nomeLivro,
             idCategoria: entity.idCategoria,
-            nomeCategoria: entity.nomeCategoria
+            categoriaLivro: entity.categoriaLivro
         })
     }
 }
