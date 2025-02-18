@@ -1,0 +1,26 @@
+{
+  "name": "api-biblioteca",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caioxsf/api-biblioteca.git"
+  },
+  "author": "caio nobile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caioxsf/api-biblioteca/issues"
+  },
+  "homepage": "https://github.com/caioxsf/api-biblioteca#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "type": "module"
+}
