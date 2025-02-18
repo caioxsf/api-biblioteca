@@ -34,4 +34,8 @@ export default class livroRepository {
             categoriaLivro: entity.categoriaLivro
         })
     }
+
+    obter (id) {
+        return listaLivro.filter(x => x.idLivro == id);
+    } 
 }
