@@ -54,5 +54,23 @@ export default class livroController {
         }
     }
 
+    deletar (req,res) {
+        try {
+            let {id} = req.params;
+            let repo = new livroRepository();
+            let livroExistente = repo.obter(id);
+
+            if(livroExistente.length == 0)
+                return res.status(200).json({msg: "Não foi possível encontrar esse livro!"}); 
+            else {
+                repo.deletar(id);
+                return res.status(200).json({msg: "Livro deletado com sucesso!"});   
+            }
+            
+        } catch (error) {
+            return res.status(500).json({msg: error.message});
+        }
+    }
+
 
 }

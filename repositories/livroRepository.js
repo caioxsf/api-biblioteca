@@ -42,4 +42,8 @@ export default class livroRepository {
     obterCategoria(id) {
         return listaLivro.filter(x => x.idCategoria == id)
     }
+
+    deletar (id) {
+        listaLivro = listaLivro.filter(x => x.idLivro != id);
+    }
 }
