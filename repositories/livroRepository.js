@@ -46,4 +46,17 @@ export default class livroRepository {
     deletar (id) {
         listaLivro = listaLivro.filter(x => x.idLivro != id);
     }
+
+    alterar (entity) {
+        for(let i=0;i<listaLivro.length;i++) {
+            if(listaLivro[i].idLivro == entity.idLivro) {
+                listaLivro[i] = {
+                    idLivro: entity.idLivro,
+                    nomeLivro: entity.nomeLivro,   
+                    idCategoria: entity.idCategoria,
+                    categoriaLivro: entity.categoriaLivro
+                };
+            }
+        }
+    }
 }

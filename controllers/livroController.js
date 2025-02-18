@@ -72,5 +72,28 @@ export default class livroController {
         }
     }
 
+    alterar (req,res) {
+        try {
+            let entity = new livroEntity();
+            let {idLivro, nomeLivro, idCategoria, categoriaLivro} = req.body;
+
+            if(idLivro && nomeLivro && idCategoria && categoriaLivro) {
+                entity.idLivro = idLivro,
+                entity.nomeLivro = nomeLivro;
+                entity.idCategoria = idCategoria;
+                entity.categoriaLivro = categoriaLivro;
+
+                let repo = new livroRepository();
+                repo.alterar(entity);
+                return res.status(200).json({msg: "Livro alterado com sucesso!"});
+            } else {
+                return res.status(400).json({msg: "Parâmetros inválidos!"});
+            }
+            
+        } catch (error) {
+            return res.status(500).json({msg: error.message});
+        }
+    }
+
 
 }
