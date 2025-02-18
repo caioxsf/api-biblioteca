@@ -38,4 +38,8 @@ export default class livroRepository {
     obter (id) {
         return listaLivro.filter(x => x.idLivro == id);
     } 
+
+    obterCategoria(id) {
+        return listaLivro.filter(x => x.idCategoria == id)
+    }
 }

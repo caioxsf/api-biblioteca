@@ -40,5 +40,19 @@ export default class livroController {
         }
     }
 
+    obterCategoria (req,res) {
+        try {
+            let {id} = req.params;
+            let repo = new livroRepository();
+            let lista = repo.obterCategoria(id);
+
+            if(lista.length == 0)
+                return res.status(404).json({msg: "Livro não encontrado!"})
+            return res.status(200).json({lista});   
+        } catch (error) {
+            return res.status(500).json({msg: error.message}); 
+        }
+    }
+
 
 }
